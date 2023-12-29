@@ -12,9 +12,13 @@ class AdminUser extends Authenticatable
     protected $table = 'admin_users';
 
     protected $fillable = [
+        // 名前
         'name',
+        // メールアドレス
         'email',
+        // パスワード
         'password',
+        // 管理権限レベル
         'admin_level',
     ];
 
