@@ -26,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  */
 
 Route::get('/admin/login', function () {
-    return view('adminLogin'); // blade.php
+    return view('adminLogin');
 })->middleware('guest:admin');
 
 Route::post('/admin/login', [App\Http\Controllers\Admin\LoginController::class, 'adminLogin'])->name('admin.login');
