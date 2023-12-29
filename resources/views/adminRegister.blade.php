@@ -44,6 +44,11 @@
         <div>
             <button type="submit">Register</button>
         </div>
+        <li>
+            <a href="{{ url('/admin/login') }}" >
+                戻る
+            </a>
+        </li>
     </form>
 </body>
 </html>

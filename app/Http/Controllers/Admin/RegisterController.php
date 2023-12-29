@@ -46,6 +46,12 @@ class RegisterController extends Controller
         return view('adminRegister');
     }
 
+    /**
+     * 管理者ユーザー情報のValidatorの作成
+     *
+     * @param array $data
+     * @return
+     */
     protected function adminValidator(array $data)
     {
         return Validator::make($data, [
@@ -56,6 +62,12 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * 管理者ユーザーのDBへの登録処理
+     *
+     * @param array $data
+     * @return
+     */
     protected function adminRegisterDatabase(array $data)
     {
         return AdminUser::create([
@@ -66,6 +78,12 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * 管理者ユーザーの登録
+     *
+     * @param Request $request
+     * @return void
+     */
     public function adminRegister(Request $request)
     {
         $this->adminValidator($request->all())->validate();

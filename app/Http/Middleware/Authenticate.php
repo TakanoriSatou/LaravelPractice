@@ -16,6 +16,14 @@ class Authenticate extends Middleware
         return $request->expectsJson() ? null : route('login');
     }
 
+    /**
+     * 認証情報が確認できない場合の処理
+     * (親クラスAuthenticateのメソッドをオーバーライド)
+     *
+     * @param [type] $request
+     * @param array $guards
+     * @return void
+     */
     protected function unauthenticated($request, array $guards)
     {
         throw new AuthenticationException(
@@ -25,6 +33,13 @@ class Authenticate extends Middleware
         );
     }
 
+    /**
+     * ログイン画面にリダイレクトする
+     *
+     * @param [type] $request
+     * @param array $guards
+     * @return void
+     */
     protected function redirectToOriginal($request, array $guards)
     {
         foreach ($guards as $guard) {
