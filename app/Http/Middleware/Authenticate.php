@@ -28,11 +28,12 @@ class Authenticate extends Middleware
     protected function redirectToOriginal($request, array $guards)
     {
         foreach ($guards as $guard) {
-            if ($guard === 'admin') {
-                return route('admin.login');
-            } else {
+            if ($guard === 'web') {
                 return $request->expectsJson() ? null : route('login');
             }
+            if ($guard === 'admin') {
+                return route('admin.login');
+            } 
         }
     }
 }
