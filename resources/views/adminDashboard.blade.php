@@ -12,7 +12,12 @@
             </li>
             <li>
                 <a href="{{route('admin.register')}}">
-                    アカウント作成
+                    管理者アカウント作成
+                </a>
+            </li>
+            <li>
+                <a href="{{route('admin.dashboard.user')}}">
+                    ユーザー管理
                 </a>
             </li>
             <li>

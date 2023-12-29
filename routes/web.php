@@ -40,3 +40,15 @@ Route::get('/admin/dashboard', function () {
 Route::get('/admin/register', [App\Http\Controllers\Admin\RegisterController::class, 'adminRegisterForm'])->middleware('auth:admin');
 
 Route::post('/admin/register', [App\Http\Controllers\Admin\RegisterController::class, 'adminRegister'])->middleware('auth:admin')->name('admin.register');
+
+/**
+ * ユーザー管理画面
+ */
+
+Route::get('/admin/dashboard/user',[App\Http\Controllers\User\UserController::class, 'index'])->middleware('auth:admin')->name('admin.dashboard.user');
+
+Route::get('/admin/dashboard/user/add',[App\Http\Controllers\User\UserController::class, 'add'])->middleware('auth:admin');
+Route::post('/admin/dashboard/user/create',[App\Http\Controllers\User\UserController::class, 'create'])->middleware('auth:admin');
+
+Route::get('/admin/dashboard/user/edit/{user}', [App\Http\Controllers\User\UserController::class, 'edit'])->middleware('auth:admin');
+Route::post('/admin/dashboard/user/update/{user}', [App\Http\Controllers\User\UserController::class, 'update'])->middleware('auth:admin');
