@@ -45,7 +45,7 @@
             <button type="submit">Register</button>
         </div>
         <li>
-            <a href="{{ url('/admin/login') }}" >
+            <a href="{{ url('/admin/dashboard') }}" >
                 戻る
             </a>
         </li>
